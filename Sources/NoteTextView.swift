@@ -77,7 +77,7 @@ class NoteTextView: NSTextView {
             var effectiveRange = NSRange()
             let chipName = subAttr.attribute(SlashChipProtection.isSlashChipKey, at: pos, effectiveRange: &effectiveRange) as? String
             if let name = chipName {
-                result += "/\(name) "
+                result += "/\(name)"
             } else {
                 result += subAttr.attributedSubstring(from: effectiveRange).string
             }

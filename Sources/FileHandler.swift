@@ -209,9 +209,8 @@ class FileHandler {
             // Check for slash chip
             let chipName = attrString.attribute(SlashChipProtection.isSlashChipKey, at: pos, effectiveRange: &effectiveRange) as? String
             if let name = chipName {
-                // The chip text is "/command " — write it as-is (it already contains the prefix)
-                // But we stored it without the slash in the attribute, so reconstruct
-                markdown += "/\(name) "
+                // Write just the command — the body text after the chip already starts with a space
+                markdown += "/\(name)"
                 pos = NSMaxRange(effectiveRange)
                 continue
             }
