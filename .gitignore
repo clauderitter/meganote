@@ -1,0 +1,5 @@
+.build/
+Meganote.app/
+.DS_Store
+*.swp
+.claude/
